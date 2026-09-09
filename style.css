@@ -1,4 +1,4 @@
-/* إعدادات عامة */
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f4f8;
@@ -14,7 +14,7 @@ body {
     height: 100vh;
 }
 
-/* تصميم البطاقات */
+
 .card {
   background: #fff;
   border-radius: 16px;
@@ -26,7 +26,6 @@ body {
   position: relative;
 }
 
-/* الهيدر الموحد (بحث) */
 .header {
   display: flex;
   align-items: center;
@@ -68,7 +67,7 @@ body {
   font-weight: bold;
 }
 
-/* الجسم المركزي */
+
 .content {
   flex: 1;
   display: flex;
@@ -78,9 +77,6 @@ body {
   text-align: center;
 }
 
-/* ---- أنماط الحالات الخاصة ---- */
-
-/* 1. Initial / Search */
 .state-initial .content {
   color: #888;
 }
@@ -90,7 +86,7 @@ body {
   color: #ccc;
 }
 
-/* 2. Loading (وضع داكن) */
+
 .state-loading {
   background: #0b1b32;
   color: #fff;
@@ -118,7 +114,7 @@ body {
   }
 }
 
-/* 3. Success (النتيجة) */
+
 .state-success .weather-result {
   background: #fff;
   border-radius: 12px;
@@ -147,7 +143,6 @@ body {
   color: #555;
 }
 
-/* 4. City not found */
 .state-notfound {
   background: #fff;
 }
@@ -170,8 +165,6 @@ body {
   margin-top: 15px;
   cursor: pointer;
 }
-
-/* 5. API / Network Error (وضع داكن) */
 .state-api-error {
   background: #0b1b32;
   color: #fff;
@@ -205,7 +198,6 @@ body {
   cursor: pointer;
 }
 
-/* 6. Empty search */
 .state-empty .content {
   color: #aaa;
 }
@@ -221,7 +213,6 @@ body {
   color: #999;
 }
 
-/* تنسيق النصوص في الأسفل */
 .state-label {
   position: absolute;
   bottom: -25px;
@@ -231,7 +222,6 @@ body {
   font-weight: bold;
 }
 
-/* تحسين الشكل على الهواتف */
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;

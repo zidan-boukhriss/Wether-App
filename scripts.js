@@ -30,7 +30,9 @@ button.addEventListener("click", async function () {
 </div>`
     
 
-  } catch (e) {}
+  } catch (e) {
+    alert('Error :  pleas try agin')
+  }
 });
 
 
