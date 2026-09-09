@@ -1,0 +1,239 @@
+/* إعدادات عامة */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  color: #333;
+  overflow: hidden;
+}
+
+.grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* تصميم البطاقات */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* الهيدر الموحد (بحث) */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+.logo {
+  font-size: 24px;
+  color: #007bff;
+}
+.title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-right: 5px;
+}
+
+.input-group {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+.input-group input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  font-size: 14px;
+}
+.input-group button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* الجسم المركزي */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ---- أنماط الحالات الخاصة ---- */
+
+/* 1. Initial / Search */
+.state-initial .content {
+  color: #888;
+}
+.state-initial .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+/* 2. Loading (وضع داكن) */
+.state-loading {
+  background: #0b1b32;
+  color: #fff;
+}
+.state-loading .header .title {
+  color: #fff;
+}
+.state-loading .input-group input {
+  background: #1c2b4a;
+  border: none;
+  color: #fff;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 3. Success (النتيجة) */
+.state-success .weather-result {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 80%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.state-success .city {
+  font-size: 24px;
+  font-weight: bold;
+}
+.state-success .country {
+  color: #888;
+  font-size: 14px;
+}
+.state-success .temp {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.state-success .wind {
+  font-size: 14px;
+  color: #555;
+}
+.state-success .wind-icon {
+  color: #555;
+}
+
+/* 4. City not found */
+.state-notfound {
+  background: #fff;
+}
+.state-notfound .error-box {
+  background: #ffe5e5;
+  padding: 30px;
+  border-radius: 12px;
+  color: #d32f2f;
+}
+.state-notfound .icon {
+  font-size: 40px;
+  color: #d32f2f;
+}
+.state-notfound .btn-retry {
+  background: #d32f2f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* 5. API / Network Error (وضع داكن) */
+.state-api-error {
+  background: #0b1b32;
+  color: #fff;
+}
+.state-api-error .header .title {
+  color: #fff;
+}
+.state-api-error .input-group input {
+  background: #1c2b4a;
+  border: none;
+  color: #fff;
+}
+.state-api-error .inner-error-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+}
+.state-api-error .icon {
+  font-size: 40px;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+.state-api-error .btn-retry {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* 6. Empty search */
+.state-empty .content {
+  color: #aaa;
+}
+.state-empty .icon {
+  font-size: 40px;
+  color: #ddd;
+}
+.state-empty .hint {
+  font-size: 14px;
+}
+.state-empty .examples {
+  font-size: 12px;
+  color: #999;
+}
+
+/* تنسيق النصوص في الأسفل */
+.state-label {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  font-size: 12px;
+  color: #777;
+  font-weight: bold;
+}
+
+/* تحسين الشكل على الهواتف */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
