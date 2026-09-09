@@ -31,7 +31,7 @@ button.addEventListener("click", async function () {
     
 
   } catch (e) {
-    alert('Error :  pleas try agin')
+    return 1;
   }
 });
 
